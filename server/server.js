@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const PORT = process.env.PORT || 8080;
 
 
 const cookieSession = require('cookie-session');
@@ -27,6 +28,6 @@ app.use(bodyParser.json());
 
 
 
-app.listen(process.env.PORT || 8080,()=>{
-  console.log("Server running");
+app.listen(PORT,()=>{
+  console.log(`Server running at port ${PORT}`);
 });
