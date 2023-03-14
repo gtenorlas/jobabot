@@ -10,9 +10,9 @@ You'll also need the server and SQL data that is available within this same gith
   - password: `development`
   - database: `jobabotdb`
 3. Install dependencies: `npm i`
-4. Create database finals using
+4. Create database using:
   - `psql -U development`
-  - `create databaase jobabotdb;`
+  - `create database jobabotdb;`
 5. Reset database: `npm run db:reset`
   - Check the db folder to see what gets created and seeded in the SDB
 6. Add TOKEN=`API KEY` in .env. See `.env.example`
