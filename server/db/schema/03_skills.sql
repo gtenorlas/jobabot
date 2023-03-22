@@ -3,6 +3,8 @@ DROP TABLE IF EXISTS skills CASCADE;
 CREATE TABLE skills(
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INT REFERENCES users(id) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  category VARCHAR(255),
   created_at TIMESTAMP NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMP,
   deleted_at TIMESTAMP
