@@ -12,6 +12,7 @@ CREATE TABLE experiences(
   end_date DATE,
   description VARCHAR(1000) NOT NULL,
   index INT,
+  alternative_name VARCHAR(255),
   created_at TIMESTAMP NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMP,
   deleted_at TIMESTAMP
