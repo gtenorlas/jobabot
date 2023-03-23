@@ -1,5 +1,5 @@
 INSERT INTO
-  users(email, password)
+  users(user_level_id, email, password)
 VALUES
 (
     1,
