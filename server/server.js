@@ -18,12 +18,12 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//const userRoutes = require('./routes/users-api');
+const userRoutes = require('./routes/users-api');
 
 
 
 //ALL API ROUTES HERE
-//app.use('/api/users',userRoutes);
+app.use('/api/users',userRoutes);
 
 
 
