@@ -24,7 +24,6 @@ VALUES
     'ON',
     'Canada'
   ),
-VALUES
   (
     2,
     'Jane',
