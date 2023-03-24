@@ -8,7 +8,7 @@ const database = require('../db/dao/q_users')
  * @param {String} email
  * @param {String} password
  */
-const authenticateUser = async function (email, password) {
+const authenticateUser = async function (email, password,res) {
   const user = await database
     .getUserWithEmail(email)
     .catch(err => res.status(500).json({ error: err.message }))
@@ -132,7 +132,8 @@ router.post('/login', async (req, res) => {
   const user = req.body
   const authenticatedUser = await authenticateUser(
     user.email,
-    user.password
+    user.password,
+    res
   )
   if (!authenticatedUser) {
     res.status(500).json({ error: 'Login error' })
