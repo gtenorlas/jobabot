@@ -1,11 +1,11 @@
-const create = props => {
+/* const create = props => {
   return <h1>Create New Resume {props.email}</h1>
 }
 
-export default create
+export default create;
 
 export async function getServerSideProps () {
-  const data = await import('/data/data.json')
+  const data = await import('/data/data.json').json()
   //const res = await fetch('url';
   //cons data = await res.json();
   console.log(data)
@@ -15,3 +15,10 @@ export async function getServerSideProps () {
     }
   }
 }
+ */
+
+ const create = props => {
+  return <h1>Create New Resume {props.email}</h1>
+}
+
+export default create;
