@@ -1,8 +1,12 @@
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
-export default MainLayout=({children})=>(
-<>
-<Header/>
-{children}
-</>
+const MainLayout = ({ children }) => (
+  <>
+    <Header />
+    {children}
+    <Footer />
+  </>
 );
+
+export default MainLayout;
