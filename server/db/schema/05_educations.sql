@@ -11,6 +11,6 @@ CREATE TABLE educations(
   index INT,
   alternative_name VARCHAR(255),
   created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-  modified_at TIMESTAMP,
+  updated_at TIMESTAMP,
   deleted_at TIMESTAMP
 );
