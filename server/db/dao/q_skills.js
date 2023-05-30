@@ -42,3 +42,21 @@ export const updateSkill = data => {
   return db.query(query, params).then(data => data.rows[0])
 }
 
+/**
+ * Delete existing skill
+ * @param(json) skill data
+ * @return(Promise<{}>) A promise of updated skill
+ */
+export const deleteSkill = data => {
+  let query = `
+  update
+    skills
+  SET
+    deleted_at = NOW()
+  WHERE
+    id = $1
+  RETURNING *;
+  `
+  const params = [data.id]
+  return db.query(query, params).then(data => data.rows[0])
+}
