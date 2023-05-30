@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }))
 
   if (foundUser.length === 0) {
-    res.status(500).json({ error: 'The user has not been existing' })
+    res.status(500).json({ error: 'The user does not exists.' })
     return
   }
 
@@ -50,7 +50,7 @@ router.post('/', async (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }))
 
   if (foundUser.length > 0) {
-    res.status(500).json({ error: 'The user has been existing already' })
+    res.status(500).json({ error: 'The user already existed.' })
     return
   }
 
@@ -82,7 +82,7 @@ router.put('/:id', async (req, res) => {
     database
   )
   if (!authenticatedUser) {
-    res.status(500).json({ error: 'Authentication error' })
+    res.status(500).json({ error: 'Authentication error!' })
     return
   }
 
@@ -92,12 +92,12 @@ router.put('/:id', async (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }))
 
   if (!updatedUser) {
-    res.status(500).json({ error: 'Update user error' })
+    res.status(500).json({ error: 'Update user error!' })
     return
   }
 
   res.status(500).json({
-    success: 'User updated',
+    success: 'User updated.',
     updatedUser
   })
 })
@@ -117,12 +117,12 @@ router.delete('/:id', async (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }))
 
   if (!deletedUser) {
-    res.status(500).json({ error: 'Delete user error' })
+    res.status(500).json({ error: 'Delete user error.' })
     return
   }
 
   res.status(200).json({
-    success: 'User deleted',
+    success: 'User deleted.',
     deletedUser
   })
 })
@@ -157,7 +157,7 @@ router.post('/login', async (req, res) => {
 // Logout
 router.post('/logout', (req, res) => {
   req.session.userId = null
-  res.status(200).json({ success: 'Logged out' })
+  res.status(200).json({ success: 'Logged out.' })
 })
 
 module.exports = router
