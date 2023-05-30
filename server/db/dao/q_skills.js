@@ -60,3 +60,20 @@ export const deleteSkill = data => {
   const params = [data.id]
   return db.query(query, params).then(data => data.rows[0])
 }
+
+/**
+ * Insert new skill
+ * @param(json) skill data
+ * @return(Promise<{}>) A promise of created skill
+ */
+export const createSkill = data => {
+  const query = `
+  INSERT INTO
+    skills (user_id, title, category)
+  VALUES
+    ($1, $2, $3) RETURNING *;
+  `
+
+  const params = [data.user_id, data.title, data.category]
+  return db.query(query, params).then(data => data.rows[0])
+}
