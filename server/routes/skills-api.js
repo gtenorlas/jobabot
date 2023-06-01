@@ -7,7 +7,7 @@ const router = express.Router()
 const dao = require('../db/dao/q_skills')
 
 /**
- * Insert new skill
+ * Retrieve all skilles by user id
  * @param(String) id
  * @return(json) all skills by user id
  */
@@ -18,3 +18,15 @@ router.get('/:id', (req, res) => {
     .then(skills => res.json(skills))
     .catch(error => res.status(500).json({ error: error.message }))
 })
+
+/**
+ * Save new skill
+ * @returns(json) skill that is saved
+ */
+router.post('/',(req,res)=>{
+  skill= req.body;
+  dao.createSkill(skill)
+  .then(data=>res.json(data))
+  .catch(error=>res.status(500).json({error:error.message}));
+});
+
