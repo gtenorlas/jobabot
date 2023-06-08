@@ -23,10 +23,22 @@ router.get('/:id', (req, res) => {
  * Save new skill
  * @returns(json) skill that is saved
  */
-router.post('/',(req,res)=>{
-  skill= req.body;
-  dao.createSkill(skill)
-  .then(data=>res.json(data))
-  .catch(error=>res.status(500).json({error:error.message}));
-});
+router.post('/', (req, res) => {
+  skill = req.body
+  dao
+    .createSkill(skill)
+    .then(data => res.json(data))
+    .catch(error => res.status(500).json({ error: error.message }))
+})
 
+/**
+ * Update an existing skill
+ * @returns(json) skill that is saved
+ */
+router.put('/:id', (req, res) => {
+  id = req.params.id
+  dao
+    .updateSkill(id)
+    .then(data => res.json(data))
+    .catch(error => res.status(500).json({ error: error.message }))
+})
